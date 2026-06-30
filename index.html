@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrea Meneghin – Coach Privato di Pallacanestro a Udine</title>
+<meta name="description" content="Allenatore privato di pallacanestro a Udine e provincia. 20 anni di carriera professionistica dalla Serie A. Sessioni individuali e piccoli gruppi, a domicilio. Primo incontro gratuito.">
+<meta name="keywords" content="coach basket Udine, allenatore pallacanestro Udine, coach privato basket Friuli, allenamento basket domicilio, Andrea Meneghin coach">
+<meta name="author" content="Andrea Meneghin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://andreameneghin.it/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Andrea Meneghin – Coach Privato di Pallacanestro a Udine">
+<meta property="og:description" content="20 anni da professionista, dalla Serie A alla B1. Allenamento basket personalizzato a domicilio, Udine e provincia.">
+<meta property="og:url" content="https://andreameneghin.it/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Andrea Meneghin – Coach Basket Udine">
+<meta name="twitter:description" content="20 anni da professionista. Allenamento basket a domicilio, Udine e provincia.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://andreameneghin.it/#business",
+      "name": "Andrea Meneghin – Coach Privato di Pallacanestro",
+      "description": "Allenatore privato di pallacanestro con 20 anni di carriera professionistica.",
+      "url": "https://andreameneghin.it/",
+      "areaServed": {"@type": "AdministrativeArea", "name": "Udine e provincia, Friuli Venezia Giulia"},
+      "address": {"@type": "PostalAddress", "addressLocality": "Udine", "addressRegion": "Friuli Venezia Giulia", "addressCountry": "IT"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://andreameneghin.it/#person",
+      "name": "Andrea Meneghin",
+      "jobTitle": "Coach privato di pallacanestro",
+      "knowsAbout": ["Pallacanestro", "Allenamento basket", "Tiro", "Difesa", "Palleggio"]
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent: #E8A800;
+  --accent-dark: #C99200;
+  --accent-deep: #7A5800;
+  --accent-light: #FFFAEB;
+  --accent-glow: rgba(232,168,0,0.18);
+  --ink: #111111;
+  --ink-mid: #1A1A1A;
+  --bg: #FFFFFF;
+  --bg-alt: #F6F6F6;
+  --text: #111111;
+  --text-muted: #666666;
+  --border: #E5E5E5;
+  --white: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── ANIMAZIONI ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  70%  { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+nav.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav.scrolled .nav-logo { color: var(--text); }
+.nav-logo span { color: var(--accent); }
+nav.scrolled .nav-logo span { color: var(--accent); }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding: 0.4rem 0;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+nav.scrolled .nav-links a { color: var(--text-muted); }
+nav.scrolled .nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: white; }
+nav.scrolled .nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--accent);
+  color: white !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 4px;
+  font-weight: 600 !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--accent-dark); opacity: 1; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  min-width: 44px; min-height: 44px;
+  align-items: center; justify-content: center;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+}
+nav.scrolled .nav-toggle span { background: var(--text); }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  z-index: 199;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; animation: menuSlide 0.22s ease both; }
+@keyframes menuSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  min-height: 48px;
+  display: flex; align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-menu a:hover { color: var(--accent); background: var(--accent-light); }
+
+/* Nav con sfondo quando il menu mobile è aperto */
+nav.menu-open {
+  background: rgba(255,255,255,0.98) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--border);
+}
+nav.menu-open .nav-logo { color: var(--text); }
+nav.menu-open .nav-logo span { color: var(--accent); }
+nav.menu-open .nav-toggle span { background: var(--text); }
+nav.menu-open .lang-switch { border-color: var(--border); }
+nav.menu-open .lang-switch button { color: var(--text-muted); }
+nav.menu-open .lang-switch button.active { background: var(--accent); color: white; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 50%, #252525 100%);
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* griglia campo stilizzata */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,168,0,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,168,0,0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  z-index: 0;
+}
+
+/* pallone animato sfondo */
+.hero-ball {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(420px, 50vw);
+  height: min(420px, 50vw);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-ball-ring {
+  position: absolute;
+  inset: -20px;
+  border: 1px solid rgba(232,168,0,0.3);
+  border-radius: 50%;
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  width: 100%;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(232,168,0,0.12);
+  border: 1px solid rgba(232,168,0,0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4.5rem, 14vw, 9.8rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+h1 .surname {
+  display: block;
+  background: linear-gradient(90deg, #FFD566, #E8A800, #FFD566);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255,255,255,0.65);
+  margin: 1.8rem 0 2.5rem;
+  max-width: 480px;
+  line-height: 1.75;
+}
+.hero-tagline strong { color: rgba(255,255,255,0.92); font-weight: 500; }
+
+.cta-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.2rem; }
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  min-height: 48px;
+  box-shadow: 0 4px 16px rgba(232,168,0,0.35);
+}
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,168,0,0.45);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+  min-height: 48px;
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
+
+/* ── STAT BAR ── */
+.statbar {
+  background: var(--ink);
+  border-top: 1px solid rgba(232,168,0,0.2);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(232,168,0,0.15);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.stat-item:last-child { border-right: none; }
+.stat-item:hover { background: rgba(232,168,0,0.08); }
+.stat-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.stat-item:hover::before { transform: scaleX(1); }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.4rem;
+}
+
+/* ── SEZIONI ── */
+section { padding: 5rem 2rem; max-width: 960px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--text);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+/* ── CHI SONO ── */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.bio-text p {
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
+}
+.bio-text p strong { color: var(--text); font-weight: 600; }
+
+.career-line {
+  border-left: 2px solid var(--border);
+  padding-left: 1.5rem;
+}
+.career-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+.career-item:hover { transform: translateX(4px); }
+.career-item::before {
+  content: '';
+  position: absolute;
+  left: -1.64rem; top: 5px;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--accent-light);
+  transition: box-shadow 0.2s;
+}
+.career-item:hover::before { box-shadow: 0 0 0 5px var(--accent-light); }
+.career-club { font-weight: 600; color: var(--text); font-size: 0.9rem; }
+.career-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+/* ── SERVIZI ── */
+.services-section { background: var(--bg-alt); padding: 5rem 2rem; }
+.services-inner { max-width: 960px; margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  cursor: default;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #FFD566);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(232,168,0,0.12);
+  border-color: rgba(232,168,0,0.2);
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: rgba(232,168,0,0.06);
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem; right: 1rem;
+}
+.service-icon {
+  width: 42px; height: 42px;
+  background: var(--accent-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.service-card:hover .service-icon {
+  background: var(--accent);
+  transform: scale(1.08);
+}
+.service-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke 0.2s;
+}
+.service-card:hover .service-icon svg { stroke: white; }
+.service-card h3 { font-weight: 600; font-size: 0.95rem; color: var(--text); margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ── DOVE ── */
+.zona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.zona-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.zona-card:hover { box-shadow: 0 4px 20px rgba(232,168,0,0.08); border-color: rgba(232,168,0,0.25); }
+.zona-icon {
+  width: 38px; height: 38px; flex-shrink: 0;
+  background: var(--accent-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.zona-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.zona-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.2rem; }
+.zona-value { font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+
+/* ── PREZZI ── */
+.prezzi-box {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.prezzi-box::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 60% 40%, rgba(232,168,0,0.15) 0%, transparent 60%);
+}
+.prezzi-box p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 540px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.prezzi-box strong { color: white; font-weight: 600; }
+.badge-gratuito {
+  display: inline-block;
+  background: rgba(232,168,0,0.25);
+  border: 1px solid rgba(232,168,0,0.5);
+  color: #FFD566;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  position: relative;
+}
+
+/* ── CONTATTI ── */
+.contact-section { background: var(--bg-alt); padding: 5rem 2rem; }
+.contact-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+.contact-inner h2 { margin-bottom: 0.8rem; }
+.contact-inner > p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 0.97rem; }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group label {
+  display: block;
+  font-size: 0.73rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  outline: none;
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 48px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232,168,0,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 130px; border-radius: 8px; }
+.form-submit { margin-top: 0.5rem; }
+.form-submit .btn-primary { width: 100%; justify-content: center; border-radius: 8px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+footer span { color: var(--accent); }
+
+/* ── ANALISI VIDEO ── */
+.video-section { background: var(--bg-alt); padding: 5rem 2rem; }
+.video-inner { max-width: 960px; margin: 0 auto; }
+.video-intro {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 0.6rem;
+}
+.video-intro strong { color: var(--text); font-weight: 600; }
+
+/* come funziona */
+.video-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0 3rem;
+}
+.video-step { position: relative; padding-left: 3rem; }
+.video-step-num {
+  position: absolute;
+  left: 0; top: -2px;
+  width: 2rem; height: 2rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+}
+.video-step h4 { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+.video-step p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; }
+
+/* fasce di prezzo */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.tier-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.tier-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(232,168,0,0.12);
+  border-color: rgba(232,168,0,0.2);
+}
+.tier-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px rgba(232,168,0,0.16);
+}
+.tier-badge {
+  position: absolute;
+  top: -0.8rem; left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.tier-name {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.tier-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--text);
+}
+.tier-price span { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+.tier-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin: 0.9rem 0 1.2rem; }
+.tier-features { list-style: none; margin-bottom: 1.6rem; flex-grow: 1; }
+.tier-features li {
+  font-size: 0.85rem;
+  color: var(--text);
+  padding: 0.45rem 0 0.45rem 1.6rem;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.tier-features li:last-child { border-bottom: none; }
+.tier-features li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.7rem;
+  width: 0.9rem; height: 0.55rem;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+.tier-card .btn-primary { width: 100%; justify-content: center; }
+.tier-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 2rem;
+}
+
+/* ── NOTA OMONIMIA ── */
+.namesake-note {
+  margin-top: 2.8rem;
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  padding: 1.7rem 2rem;
+}
+.namesake-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.namesake-note p {
+  color: var(--text);
+  font-size: 0.93rem;
+  line-height: 1.8;
+}
+.namesake-note p + p { margin-top: 0.8rem; }
+.namesake-note strong { color: var(--text); font-weight: 600; }
+
+/* ── LANG SWITCH ── */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+.lang-switch button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  min-height: 28px;
+  line-height: 1;
+}
+.lang-switch button.active { background: var(--accent); color: white; }
+.lang-switch button:hover:not(.active) { color: white; }
+nav.scrolled .lang-switch { border-color: var(--border); }
+nav.scrolled .lang-switch button { color: var(--text-muted); }
+nav.scrolled .lang-switch button:hover:not(.active) { color: var(--text); }
+
+.mobile-lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-lang-switch > span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 0.2rem;
+}
+.mobile-lang-switch button {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.08em;
+  min-height: 32px;
+}
+.mobile-lang-switch button.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+/* ── BATTUTA HERO ── */
+.hero-quip {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+  font-size: clamp(0.9rem, 2.2vw, 1.02rem);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.68);
+  max-width: 520px;
+  font-style: italic;
+}
+.hero-quip strong { color: #fff; font-style: normal; font-weight: 600; }
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  nav { padding: 0 1rem; }
+
+  .hero { padding: 88px 1.2rem 4rem; }
+  .hero-ball { display: none; }
+  .cta-group { flex-direction: column; gap: 0.75rem; }
+  .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+
+  .statbar { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(232,168,0,0.15); padding: 1.5rem; }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(232,168,0,0.15); }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+
+  section { padding: 3.5rem 1.2rem; }
+  .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .services-section { padding: 3.5rem 1.2rem; }
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .zona-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-section { padding: 3.5rem 1.2rem; }
+  .prezzi-box { padding: 2rem 1.5rem; }
+  .video-section { padding: 3.5rem 1.2rem; }
+  .video-steps { grid-template-columns: 1fr; gap: 1.2rem; }
+  .tier-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .tier-card.featured { order: -1; }
+  .namesake-note { padding: 1.4rem 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0 0.85rem; }
+  .nav-logo { font-size: 1.3rem; }
+  .lang-switch { display: none; }
+
+  h1 { font-size: clamp(2.9rem, 13vw, 4.2rem); }
+  h2 { font-size: 1.75rem; }
+  .stat-num { font-size: 2.1rem; }
+
+  .hero { padding: 80px 1rem 3rem; }
+  .hero-tagline { font-size: 0.9rem; line-height: 1.7; }
+  .hero-quip { font-size: 0.87rem; }
+
+  section { padding: 3rem 1rem; }
+  .services-section, .video-section, .contact-section { padding: 3rem 1rem; }
+  .service-card { padding: 1.4rem; }
+  .namesake-note { padding: 1.2rem 1.1rem; margin-top: 2rem; }
+  .prezzi-box { padding: 1.8rem 1.1rem; }
+  .tier-card { padding: 1.6rem 1.3rem; }
+  .tier-price { font-size: 2.5rem; }
+  .video-step { padding-left: 2.8rem; }
+  .zona-card { padding: 1.1rem 1.2rem; }
+  .career-line { padding-left: 1.2rem; }
+  .career-club { font-size: 0.84rem; }
+}
+
+@media (max-width: 360px) {
+  h1 { font-size: 2.6rem; }
+  h2 { font-size: 1.6rem; }
+  .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.15em; }
+  .btn-primary, .btn-ghost { font-size: 0.88rem; padding: 0.8rem 1.2rem; }
+  .stat-num { font-size: 1.9rem; }
+  .stat-label { font-size: 0.62rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Menu principale">
+  <a href="#" class="nav-logo">Andrea <span>Meneghin</span></a>
+  <ul class="nav-links">
+    <li><a href="#chi-sono" data-i18n="nav.about">Chi sono</a></li>
+    <li><a href="#servizi" data-i18n="nav.services">Servizi</a></li>
+    <li><a href="#analisi-video" data-i18n="nav.video">Analisi Video</a></li>
+    <li><a href="#dove" data-i18n="nav.where">Dove</a></li>
+    <li><a href="#prezzi" data-i18n="nav.rates">Tariffe</a></li>
+    <li><a href="/fondamentali/" data-i18n="nav.fundamentals">Fondamentali</a></li>
+    <li><a href="#contatti" class="nav-cta" data-i18n="nav.contact">Contattami</a></li>
+  </ul>
+  <div class="lang-switch" role="group" aria-label="Lingua / Language">
+    <button id="btn-it" onclick="setLang('it')" class="active">IT</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
+  <a href="#chi-sono" data-i18n="nav.about">Chi sono</a>
+  <a href="#servizi" data-i18n="nav.services">Servizi</a>
+  <a href="#analisi-video" data-i18n="nav.video">Analisi Video</a>
+  <a href="#dove" data-i18n="nav.where">Dove</a>
+  <a href="#prezzi" data-i18n="nav.rates">Tariffe</a>
+  <a href="/fondamentali/" data-i18n="nav.fundamentals">Fondamentali</a>
+  <a href="#contatti" data-i18n="nav.contact">Contattami</a>
+  <div class="mobile-lang-switch">
+    <span>Lang:</span>
+    <button id="mbtn-it" onclick="setLang('it')" class="active">IT</button>
+    <button id="mbtn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <!-- pallone SVG animato -->
+  <div class="hero-ball" aria-hidden="true">
+    <div class="hero-ball-ring"></div>
+    <!-- campo da basket — visuale dall'alto, metà campo -->
+    <svg viewBox="0 0 420 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="courtBg" cx="50%" cy="20%" r="75%">
+          <stop offset="0%" stop-color="rgba(232,168,0,0.09)"/>
+          <stop offset="100%" stop-color="rgba(232,168,0,0.01)"/>
+        </radialGradient>
+      </defs>
+
+      <!-- sfondo campo -->
+      <rect x="10" y="10" width="400" height="376" fill="url(#courtBg)" rx="3"/>
+      <!-- bordo campo -->
+      <rect x="10" y="10" width="400" height="376" stroke="rgba(232,168,0,0.45)" stroke-width="2.5" fill="none" rx="3"/>
+
+      <!-- area pitturata (key) -->
+      <rect x="146" y="10" width="128" height="152" stroke="rgba(232,168,0,0.4)" stroke-width="1.8" fill="rgba(232,168,0,0.05)"/>
+
+      <!-- blocchi corsia – lato sinistro -->
+      <line x1="132" y1="66"  x2="146" y2="66"  stroke="rgba(232,168,0,0.3)" stroke-width="1.5"/>
+      <line x1="132" y1="122" x2="146" y2="122" stroke="rgba(232,168,0,0.3)" stroke-width="1.5"/>
+      <!-- blocchi corsia – lato destro -->
+      <line x1="274" y1="66"  x2="288" y2="66"  stroke="rgba(232,168,0,0.3)" stroke-width="1.5"/>
+      <line x1="274" y1="122" x2="288" y2="122" stroke="rgba(232,168,0,0.3)" stroke-width="1.5"/>
+
+      <!-- cerchio tiro libero – metà piena (verso centro campo) -->
+      <path d="M162 162 A48 48 0 0 0 258 162" stroke="rgba(232,168,0,0.4)" stroke-width="1.8" fill="none"/>
+      <!-- cerchio tiro libero – metà tratteggiata (verso canestro) -->
+      <path d="M162 162 A48 48 0 0 1 258 162" stroke="rgba(232,168,0,0.2)" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
+
+      <!-- linea da tre – segmento angolo sinistro -->
+      <line x1="34"  y1="10"  x2="34"  y2="124" stroke="rgba(232,168,0,0.4)" stroke-width="1.8"/>
+      <!-- arco da tre punti -->
+      <path d="M34 124 A190 190 0 0 0 386 124" stroke="rgba(232,168,0,0.4)" stroke-width="1.8" fill="none"/>
+      <!-- linea da tre – segmento angolo destro -->
+      <line x1="386" y1="10"  x2="386" y2="124" stroke="rgba(232,168,0,0.4)" stroke-width="1.8"/>
+
+      <!-- arco area protetta (no-charge) -->
+      <path d="M178 52 A32 32 0 0 0 242 52" stroke="rgba(232,168,0,0.35)" stroke-width="1.4" fill="none"/>
+
+      <!-- linea di metà campo -->
+      <line x1="10" y1="386" x2="410" y2="386" stroke="rgba(232,168,0,0.35)" stroke-width="1.8"/>
+      <!-- cerchio centrale (metà visibile a metà campo) -->
+      <path d="M162 386 A48 48 0 0 0 258 386" stroke="rgba(232,168,0,0.25)" stroke-width="1.5" fill="none"/>
+
+      <!-- tabellone -->
+      <line x1="185" y1="16" x2="235" y2="16" stroke="rgba(232,168,0,0.75)" stroke-width="3" stroke-linecap="round"/>
+      <!-- braccio canestro -->
+      <line x1="210" y1="16" x2="210" y2="44" stroke="rgba(232,168,0,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- anello canestro -->
+      <circle cx="210" cy="52" r="8" stroke="rgba(232,168,0,0.75)" stroke-width="2.5" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <h1>
+      Andrea
+      <span class="surname">Meneghin</span>
+    </h1>
+    <p data-i18n="hero.subtitle" style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.4rem,4vw,2.2rem); letter-spacing:0.18em; color:rgba(255,255,255,0.45); margin-top:0.3rem;">Basket Personal Coaching</p>
+    <p class="hero-tagline" data-i18n="hero.tagline">
+      Vent'anni da professionista, dalla <strong>Serie A con la Reyer Venezia</strong>
+      alla C1. Ora tutta quella esperienza è a tua disposizione,
+      <strong>dove e quando vuoi</strong>.
+    </p>
+    <p class="hero-quip" data-i18n="hero.quip">
+      Sì, mi chiamo Andrea Meneghin. No, mio papà non si chiama Dino. Ma se cerchi i fondamentali della pallacanestro spiegati con passione, <strong>sei comunque nel posto giusto</strong>.
+    </p>
+    <div class="cta-group">
+      <a href="#contatti" class="btn-primary" data-i18n="hero.cta.primary">Prenota una sessione →</a>
+      <a href="#chi-sono" class="btn-ghost" data-i18n="hero.cta.ghost">Scopri di più</a>
+    </div>
+  </div>
+</header>
+
+<!-- STAT BAR -->
+<div class="statbar" aria-label="Numeri in sintesi">
+  <div class="stat-item">
+    <div class="stat-num" data-target="20">0</div>
+    <div class="stat-label" data-i18n="stat.years">Anni da professionista</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-target="10" data-suffix="+">0</div>
+    <div class="stat-label" data-i18n="stat.teams">Squadre in carriera</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">A1</div>
+    <div class="stat-label" data-i18n="stat.league">Massima serie giocata</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1:1</div>
+    <div class="stat-label" data-i18n="stat.personal">Allenamento personalizzato</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+<!-- CHI SONO -->
+<section id="chi-sono" aria-labelledby="title-chi-sono">
+  <p class="section-eyebrow reveal" data-i18n="about.eyebrow">Chi sono</p>
+  <h2 id="title-chi-sono" class="reveal reveal-delay-1" data-i18n="about.h2">Una carriera lunga un campo</h2>
+  <div class="bio-grid">
+    <div class="bio-text reveal reveal-delay-2">
+      <p data-i18n="about.p1">Ho giocato a basket professionistico per <strong>vent'anni</strong>, toccando la massima serie con la <strong>Reyer Venezia</strong> e girando tutta Italia dalla Serie A fino alla C1. Ho vissuto spogliatoi di club storici, allenatori esigenti, infortuni che ti rimettono in discussione, e la soddisfazione di tornare in campo ogni volta.</p>
+      <p data-i18n="about.p2">Oggi metto questa esperienza al servizio di chi vuole crescere: ragazzi, adulti, giocatori in attività o appassionati che vogliono migliorare il proprio gioco. Vengo da te — nel tuo cortile, al campetto, ovunque ci sia un canestro.</p>
+    </div>
+    <div class="career-line reveal reveal-delay-3" aria-label="Carriera professionistica">
+      <div class="career-item"><div class="career-club">Reyer Venezia</div><div class="career-detail" data-i18n="career.seriea">Serie A</div></div>
+      <div class="career-item"><div class="career-club">Ferrara</div><div class="career-detail" data-i18n="career.seriea">Serie A</div></div>
+      <div class="career-item"><div class="career-club">Parma · Roseto degli Abruzzi · Montegranaro · Scafati</div><div class="career-detail" data-i18n="career.serieb1">Serie B1</div></div>
+      <div class="career-item"><div class="career-club">Tortona · Busto Arsizio</div><div class="career-detail" data-i18n="career.seriec1">Serie C1</div></div>
+      <div class="career-item"><div class="career-club">Borgomanero · Corno di Rosazzo</div><div class="career-detail" data-i18n="career.serieb2">Serie B2</div></div>
+      <div class="career-item"><div class="career-club">Gorizia</div><div class="career-detail" data-i18n="career.last">Serie B1 — ultima stagione</div></div>
+    </div>
+  </div>
+
+  <div class="namesake-note reveal">
+    <div class="namesake-label" data-i18n="namesake.label">Una precisazione, col sorriso</div>
+    <p data-i18n="namesake.p1">Sì, mi chiamo <strong>Andrea Meneghin</strong>. E no — non sono <em>quell'</em> Andrea Meneghin, il figlio di Dino, la leggenda del basket italiano. Siamo omonimi: stesso nome, stesso cognome, stessa passione per la palla a spicchi… ma due persone diverse.</p>
+    <p data-i18n="namesake.p2">Lo metto in chiaro subito, così non lo scopri a metà strada: quando mi scrivi e quando prenoti, dall'altra parte ci sono io, <strong>Andrea da Udine</strong>. Del mio celebre omonimo condivido il nome e una vita vera passata sui parquet — la Serie A, le categorie, <strong>vent'anni di campo</strong>. Lui resta nella storia del basket italiano, e se lo merita. Io sono qui, con te, per aiutarti a migliorare <strong>un canestro alla volta</strong>.</p>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+<div class="services-section" id="servizi">
+  <div class="services-inner">
+    <p class="section-eyebrow reveal" data-i18n="services.eyebrow">Cosa offro</p>
+    <h2 class="reveal reveal-delay-1" data-i18n="services.h2">Allenamento su misura, da te</h2>
+    <div class="services-grid">
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-num" aria-hidden="true">01</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <circle cx="15" cy="15" r="6" stroke-width="1.5"/>
+          <path d="M9.5 12.5Q15 11 20.5 12.5M9.2 15h11.6M9.5 17.5Q15 19 20.5 17.5" stroke-width="1.2"/>
+          <circle cx="6" cy="4.5" r="2.2" stroke-width="1.5"/>
+          <path d="M6 7v4.5M3.5 9.5h5" stroke-width="1.5"/>
+          <path d="M5 11.5l-1.5 4.5M7 11.5l1.5 4.5" stroke-width="1.5"/>
+        </svg></div>
+        <h3 data-i18n="s1.title">Sessioni individuali</h3>
+        <p data-i18n="s1.desc">Un'ora dedicata completamente a te. Lavoriamo sui fondamentali, sulle debolezze specifiche e sugli obiettivi che vuoi raggiungere.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-num" aria-hidden="true">02</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <circle cx="5" cy="5" r="2" stroke-width="1.5"/>
+          <path d="M5 7.5v3.5M3 9.5h4M3.8 11l-1 4.5M6.2 11l1 4.5" stroke-width="1.3"/>
+          <circle cx="12" cy="4" r="2.5" stroke-width="1.5"/>
+          <path d="M12 7v4.5M9.5 9.5h5M10.5 11.5l-1.5 5M13.5 11.5l1.5 5" stroke-width="1.5"/>
+          <circle cx="19" cy="5" r="2" stroke-width="1.5"/>
+          <path d="M19 7.5v3.5M17 9.5h4M17.8 11l-1 4.5M20.2 11l1 4.5" stroke-width="1.3"/>
+        </svg></div>
+        <h3 data-i18n="s2.title">Piccoli gruppi</h3>
+        <p data-i18n="s2.desc">Due o tre atleti insieme: ideale per fratelli, amici, o piccole squadre che vogliono lavorare sullo stesso obiettivo con più intensità.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-3">
+        <div class="service-num" aria-hidden="true">03</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <rect x="14" y="2" width="8" height="5.5" rx="0.5" stroke-width="1.5"/>
+          <line x1="18" y1="7.5" x2="18" y2="10" stroke-width="1.5"/>
+          <line x1="13" y1="10" x2="22" y2="10" stroke-width="2"/>
+          <path d="M13.5 10 Q15 14 18 14 Q21 14 22.5 10" stroke-width="1.2"/>
+          <circle cx="6" cy="6" r="4" stroke-width="1.5"/>
+          <path d="M2.5 4.5Q6 3 9.5 4.5M2.2 6h7.6M2.5 7.5Q6 9 9.5 7.5" stroke-width="1"/>
+          <path d="M10 5Q14 2 14 9" stroke-dasharray="2 1.5" stroke-width="1.3"/>
+        </svg></div>
+        <h3 data-i18n="s3.title">Meccanica di tiro</h3>
+        <p data-i18n="s3.desc">Analisi e correzione del gesto tecnico al tiro: forma, rilascio, ripetizione. Il lavoro più richiesto e quello che fa la differenza nei momenti decisivi.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-4">
+        <div class="service-num" aria-hidden="true">04</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="19" r="3.5" stroke-width="1.5"/>
+          <path d="M8.8 17.5Q12 16.2 15.2 17.5M8.5 19h7M8.8 20.5Q12 21.8 15.2 20.5" stroke-width="1"/>
+          <path d="M12 15.5 L16 11 L8 7 L16 3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.5 3.5L16 3L15.5 5.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></div>
+        <h3 data-i18n="s4.title">Ballhandling e letture</h3>
+        <p data-i18n="s4.desc">Ball handling, cambi di direzione, 1 contro 1. Come leggere il campo e prendere le decisioni giuste sotto pressione.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-5">
+        <div class="service-num" aria-hidden="true">05</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="3.5" r="2" stroke-width="1.5"/>
+          <path d="M12 5.5 L12 9.5" stroke-width="1.5"/>
+          <path d="M4 8.5 L12 9.5 L20 8.5" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M4 8.5 L3 6M20 8.5 L21 6" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M12 9.5 L7 19M12 9.5 L17 19" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M5.5 19.5 L8.5 18.5M15.5 18.5 L18.5 19.5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg></div>
+        <h3 data-i18n="s5.title">Difesa e posizionamento</h3>
+        <p data-i18n="s5.desc">Footwork difensivo, posizione del corpo, resistenza. La difesa si allena, eccome — e spesso è il dettaglio che ti fa giocare titolare.</p>
+      </article>
+      <article class="service-card reveal reveal-delay-6">
+        <div class="service-num" aria-hidden="true">06</div>
+        <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+          <path d="M9 21h6M10 18h4" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M12 2C8.69 2 6 4.69 6 8c0 2.5 1.4 4.7 3.5 5.8V16h5v-2.2C16.6 12.7 18 10.5 18 8c0-3.31-2.69-6-6-6z" stroke-width="1.5"/>
+          <path d="M8.5 7Q12 5.5 15.5 7" stroke-width="1" stroke-linecap="round"/>
+          <path d="M7.5 9.5 Q10 8 12 8 Q14 8 16.5 9.5" stroke-width="1" stroke-linecap="round"/>
+          <path d="M8.5 12Q12 13.5 15.5 12" stroke-width="1" stroke-linecap="round"/>
+        </svg></div>
+        <h3 data-i18n="s6.title">Aspetto mentale</h3>
+        <p data-i18n="s6.desc">Vent'anni di carriera insegnano che la testa conta quanto le gambe. Gestione della pressione, momenti di crisi, continuità.</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- ANALISI VIDEO -->
+<div class="video-section" id="analisi-video">
+  <div class="video-inner">
+    <p class="section-eyebrow reveal" data-i18n="video.eyebrow">Coaching online</p>
+    <h2 class="reveal reveal-delay-1" data-i18n="video.h2">Analisi video, ovunque tu sia</h2>
+    <p class="video-intro reveal reveal-delay-2" data-i18n="video.intro1">
+      Pensala come avere un <strong>tutor a distanza</strong>, solo che la materia è il basket. Non serve essere a Udine:
+      mi mandi una clip del tuo <strong>tiro</strong>, del tuo <strong>palleggio</strong> o di una situazione di gioco,
+      e io te la rimando commentata fotogramma per fotogramma — cosa funziona, cosa correggere e <strong>come allenarlo</strong>.
+      Un video che puoi riguardare quante volte vuoi, prima di ogni allenamento.
+    </p>
+    <p class="video-intro reveal reveal-delay-2" data-i18n="video.intro2">
+      E come un buon tutor non mi fermo a una correzione e via: ti lascio gli esercizi su cui lavorare, tu ti alleni e mi
+      rimandi una nuova clip, e insieme vediamo i progressi. È un <strong>percorso che ti fa crescere nel tempo</strong> —
+      per questo il pacchetto e il percorso mensile valgono molto più di una singola analisi.
+    </p>
+
+    <!-- COME FUNZIONA -->
+    <div class="video-steps">
+      <div class="video-step reveal reveal-delay-2">
+        <div class="video-step-num" aria-hidden="true">1</div>
+        <h4 data-i18n="step1.title">Scegli e paga</h4>
+        <p data-i18n="step1.desc">Scegli la formula qui sotto e completa il pagamento in modo sicuro.</p>
+      </div>
+      <div class="video-step reveal reveal-delay-3">
+        <div class="video-step-num" aria-hidden="true">2</div>
+        <h4 data-i18n="step2.title">Carichi la clip</h4>
+        <p data-i18n="step2.desc">Subito dopo, incolli il link al tuo video nel modulo dedicato.</p>
+      </div>
+      <div class="video-step reveal reveal-delay-4">
+        <div class="video-step-num" aria-hidden="true">3</div>
+        <h4 data-i18n="step3.title">Ricevi l'analisi</h4>
+        <p data-i18n="step3.desc">Entro pochi giorni ti invio per email il video commentato.</p>
+      </div>
+    </div>
+
+    <!-- FASCE DI PREZZO -->
+    <div class="tier-grid">
+      <!-- Fascia 1 -->
+      <div class="tier-card reveal reveal-delay-2">
+        <div class="tier-name" data-i18n="tier1.name">Analisi singola</div>
+        <div class="tier-price">35€</div>
+        <p class="tier-desc" data-i18n="tier1.desc">Perfetta per provare: una clip analizzata nel dettaglio.</p>
+        <ul class="tier-features">
+          <li data-i18n="tier1.f1">1 clip (tiro, palleggio o gioco)</li>
+          <li data-i18n="tier1.f2">Video commentato di 5–10 minuti</li>
+          <li data-i18n="tier1.f3">Consegna entro 4 giorni</li>
+        </ul>
+        <a href="INSERISCI_LINK_STRIPE_SINGOLA" class="btn-primary" data-i18n="tier1.cta">Prenota ora →</a>
+      </div>
+
+      <!-- Fascia 2 (in evidenza) -->
+      <div class="tier-card featured reveal reveal-delay-3">
+        <div class="tier-badge" data-i18n="tier2.badge">Più scelto</div>
+        <div class="tier-name" data-i18n="tier2.name">Pacchetto 4 analisi</div>
+        <div class="tier-price">120€</div>
+        <p class="tier-desc" data-i18n="tier2.desc">Un vero percorso: quattro analisi per vedere i progressi.</p>
+        <ul class="tier-features">
+          <li data-i18n="tier2.f1">4 clip in 4 settimane</li>
+          <li data-i18n="tier2.f2">Video commentato per ognuna</li>
+          <li data-i18n="tier2.f3">Indicazioni di allenamento tra una e l'altra</li>
+          <li data-i18n="tier2.f4">Risparmi rispetto alla singola</li>
+        </ul>
+        <a href="INSERISCI_LINK_STRIPE_PACCHETTO" class="btn-primary" data-i18n="tier2.cta">Inizia il percorso →</a>
+      </div>
+
+      <!-- Fascia 3 -->
+      <div class="tier-card reveal reveal-delay-4">
+        <div class="tier-name" data-i18n="tier3.name">Percorso mensile</div>
+        <div class="tier-price">160€<span data-i18n="tier3.price.suffix"> / mese</span></div>
+        <p class="tier-desc" data-i18n="tier3.desc">Ti seguo con continuità, come un coach a distanza.</p>
+        <ul class="tier-features">
+          <li data-i18n="tier3.f1">Analisi periodiche durante il mese</li>
+          <li data-i18n="tier3.f2">Programma personalizzato scritto</li>
+          <li data-i18n="tier3.f3">1 videochiamata mensile</li>
+          <li data-i18n="tier3.f4">Priorità nelle risposte</li>
+        </ul>
+        <a href="INSERISCI_LINK_STRIPE_MENSILE" class="btn-primary" data-i18n="tier3.cta">Attiva il percorso →</a>
+      </div>
+    </div>
+
+    <p class="tier-note reveal" data-i18n="tier.note">
+      Non sai quale scegliere? <a href="#contatti" style="color:var(--accent);font-weight:600;text-decoration:none;">Scrivimi</a> e ne parliamo: il primo confronto è gratuito.
+    </p>
+  </div>
+</div>
+
+<!-- DOVE -->
+<section id="dove" aria-labelledby="title-dove">
+  <p class="section-eyebrow reveal" data-i18n="where.eyebrow">Dove e quando</p>
+  <h2 id="title-dove" class="reveal reveal-delay-1" data-i18n="where.h2">Vengo da te</h2>
+  <p class="reveal reveal-delay-2" data-i18n="where.intro" style="color:var(--text-muted);font-size:.97rem;line-height:1.8;max-width:580px;margin-bottom:2rem;">
+    Non ho una palestra fissa — e questa è una scelta, non un limite. Il mio allenamento si adatta al tuo spazio: cortile, campetto di quartiere, parco. Se serve una struttura al coperto, lo organizziamo insieme.
+  </p>
+  <div class="zona-grid">
+    <div class="zona-card reveal reveal-delay-2">
+      <div class="zona-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><div class="zona-label" data-i18n="zona1.label">Zona</div><div class="zona-value" data-i18n="zona1.value">Udine e provincia (Friuli Venezia Giulia)</div></div>
+    </div>
+    <div class="zona-card reveal reveal-delay-3">
+      <div class="zona-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div><div class="zona-label" data-i18n="zona2.label">Disponibilità</div><div class="zona-value" data-i18n="zona2.value">Pomeriggio, con flessibilità sull'orario</div></div>
+    </div>
+    <div class="zona-card reveal reveal-delay-4">
+      <div class="zona-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div><div class="zona-label" data-i18n="zona3.label">Mobilità</div><div class="zona-value" data-i18n="zona3.value">Disponibile a spostarsi nei comuni limitrofi</div></div>
+    </div>
+    <div class="zona-card reveal reveal-delay-5">
+      <div class="zona-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div><div class="zona-label" data-i18n="zona4.label">Primo incontro</div><div class="zona-value" data-i18n="zona4.value">Valutazione gratuita per definire obiettivi e programma</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREZZI -->
+<section id="prezzi" aria-labelledby="title-prezzi" style="padding-top:0;">
+  <p class="section-eyebrow reveal" data-i18n="rates.eyebrow">Tariffe</p>
+  <h2 id="title-prezzi" class="reveal reveal-delay-1" data-i18n="rates.h2">Investimento personalizzato</h2>
+  <div class="prezzi-box reveal reveal-delay-2">
+    <p data-i18n="rates.text">Le tariffe variano in base al tipo di sessione, alla frequenza e al numero di partecipanti. Contattami per un preventivo su misura.</p>
+    <span class="badge-gratuito" data-i18n="rates.badge">✓ Primo incontro di valutazione gratuito</span>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<div class="contact-section" id="contatti">
+  <div class="contact-inner">
+    <p class="section-eyebrow reveal" data-i18n="contact.eyebrow">Contatti</p>
+    <h2 class="reveal reveal-delay-1" data-i18n="contact.h2">Iniziamo</h2>
+    <p class="reveal reveal-delay-2" data-i18n="contact.intro">Scrivimi per una valutazione gratuita o per qualsiasi domanda. Rispondo di persona.</p>
+    <form class="contact-form reveal reveal-delay-3" name="contatto" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)" novalidate>
+      <input type="hidden" name="form-name" value="contatto">
+      <p hidden><label>Non compilare se sei umano: <input name="bot-field"></label></p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome" data-i18n="form.nome.label">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" data-i18n-placeholder="form.nome.placeholder" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="eta" data-i18n="form.eta.label">Età atleta</label>
+          <input type="text" id="eta" name="eta" placeholder="es. 15 anni" data-i18n-placeholder="form.eta.placeholder">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email" data-i18n="form.email.label">Email</label>
+          <input type="email" id="email" name="email" placeholder="tua@email.it" data-i18n-placeholder="form.email.placeholder" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="tel" data-i18n="form.tel.label">Telefono / WhatsApp</label>
+          <input type="tel" id="tel" name="tel" placeholder="+39 ..." data-i18n-placeholder="form.tel.placeholder" autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="servizio" data-i18n="form.servizio.label">Tipo di allenamento</label>
+        <select id="servizio" name="servizio">
+          <option value="" data-i18n="form.servizio.placeholder">Seleziona...</option>
+          <option value="individuale" data-i18n="form.opt.individuale">Sessione individuale</option>
+          <option value="gruppo" data-i18n="form.opt.gruppo">Piccolo gruppo (2–3 persone)</option>
+          <option value="tiro" data-i18n="form.opt.tiro">Tiro e meccanica</option>
+          <option value="palleggio" data-i18n="form.opt.palleggio">Palleggio e lettura del gioco</option>
+          <option value="difesa" data-i18n="form.opt.difesa">Difesa e atletismo</option>
+          <option value="valutazione" data-i18n="form.opt.valutazione">Non lo so ancora — valutiamo insieme</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="msg" data-i18n="form.msg.label">Messaggio</label>
+        <textarea id="msg" name="msg" placeholder="Raccontami un po' di te: livello di gioco, obiettivi, dove ti trovi..." data-i18n-placeholder="form.msg.placeholder"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary" data-i18n="form.submit">Invia richiesta →</button>
+      </div>
+    </form>
+    <div id="form-success" data-i18n="form.success" style="display:none;margin-top:1.5rem;color:#E8A800;font-size:1rem;font-weight:600;">
+      ✓ Messaggio inviato. Ti risponderò al più presto!
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <p data-i18n="footer.text">© 2026 <span>Andrea Meneghin</span> · Coach privato di pallacanestro · Udine e provincia</p>
+</footer>
+
+<script>
+// Nav scrolled
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Hamburger
+const toggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+toggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  navbar.classList.toggle('menu-open', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    navbar.classList.remove('menu-open');
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Contatori animati
+function animateCount(el, target, suffix) {
+  let start = 0;
+  const duration = 1800;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(ease * target) + (suffix || '');
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      animateCount(el, target, suffix);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── TRADUZIONE IT / EN ──
+const translations = {
+  it: {
+    'nav.about':'Chi sono','nav.services':'Servizi','nav.video':'Analisi Video',
+    'nav.where':'Dove','nav.rates':'Tariffe','nav.fundamentals':'Fondamentali','nav.contact':'Contattami',
+    'hero.subtitle':'Basket Personal Coaching',
+    'hero.tagline':'Vent\'anni da professionista, dalla <strong>Serie A con la Reyer Venezia</strong> alla C1. Ora tutta quella esperienza è a tua disposizione, <strong>dove e quando vuoi</strong>.',
+    'hero.quip':'Sì, mi chiamo Andrea Meneghin. No, mio papà non si chiama Dino. Ma se cerchi i fondamentali della pallacanestro spiegati con passione, <strong>sei comunque nel posto giusto</strong>.',
+    'hero.cta.primary':'Prenota una sessione →','hero.cta.ghost':'Scopri di più',
+    'stat.years':'Anni da professionista','stat.teams':'Squadre in carriera','stat.league':'Massima serie giocata','stat.personal':'Allenamento personalizzato',
+    'about.eyebrow':'Chi sono','about.h2':'Una carriera lunga un campo',
+    'about.p1':'Ho giocato a basket professionistico per <strong>vent\'anni</strong>, toccando la massima serie con la <strong>Reyer Venezia</strong> e girando tutta Italia dalla Serie A fino alla C1. Ho vissuto spogliatoi di club storici, allenatori esigenti, infortuni che ti rimettono in discussione, e la soddisfazione di tornare in campo ogni volta.',
+    'about.p2':'Oggi metto questa esperienza al servizio di chi vuole crescere: ragazzi, adulti, giocatori in attività o appassionati che vogliono migliorare il proprio gioco. Vengo da te — nel tuo cortile, al campetto, ovunque ci sia un canestro.',
+    'career.seriea':'Serie A','career.serieb1':'Serie B1','career.seriec1':'Serie C1','career.serieb2':'Serie B2','career.last':'Serie B1 — ultima stagione',
+    'namesake.label':'Una precisazione, col sorriso',
+    'namesake.p1':'Sì, mi chiamo <strong>Andrea Meneghin</strong>. E no — non sono <em>quell\'</em> Andrea Meneghin, il figlio di Dino, la leggenda del basket italiano. Siamo omonimi: stesso nome, stesso cognome, stessa passione per la palla a spicchi… ma due persone diverse.',
+    'namesake.p2':'Lo metto in chiaro subito, così non lo scopri a metà strada: quando mi scrivi e quando prenoti, dall\'altra parte ci sono io, <strong>Andrea da Udine</strong>. Del mio celebre omonimo condivido il nome e una vita vera passata sui parquet — la Serie A, le categorie, <strong>vent\'anni di campo</strong>. Lui resta nella storia del basket italiano, e se lo merita. Io sono qui, con te, per aiutarti a migliorare <strong>un canestro alla volta</strong>.',
+    'services.eyebrow':'Cosa offro','services.h2':'Allenamento su misura, da te',
+    's1.title':'Sessioni individuali','s1.desc':'Un\'ora dedicata completamente a te. Lavoriamo sui fondamentali, sulle debolezze specifiche e sugli obiettivi che vuoi raggiungere.',
+    's2.title':'Piccoli gruppi','s2.desc':'Due o tre atleti insieme: ideale per fratelli, amici, o piccole squadre che vogliono lavorare sullo stesso obiettivo con più intensità.',
+    's3.title':'Meccanica di tiro','s3.desc':'Analisi e correzione del gesto tecnico al tiro: forma, rilascio, ripetizione. Il lavoro più richiesto e quello che fa la differenza nei momenti decisivi.',
+    's4.title':'Ballhandling e letture','s4.desc':'Ball handling, cambi di direzione, 1 contro 1. Come leggere il campo e prendere le decisioni giuste sotto pressione.',
+    's5.title':'Difesa e posizionamento','s5.desc':'Footwork difensivo, posizione del corpo, resistenza. La difesa si allena, eccome — e spesso è il dettaglio che ti fa giocare titolare.',
+    's6.title':'Aspetto mentale','s6.desc':'Vent\'anni di carriera insegnano che la testa conta quanto le gambe. Gestione della pressione, momenti di crisi, continuità.',
+    'video.eyebrow':'Coaching online','video.h2':'Analisi video, ovunque tu sia',
+    'video.intro1':'Pensala come avere un <strong>tutor a distanza</strong>, solo che la materia è il basket. Non serve essere a Udine: mi mandi una clip del tuo <strong>tiro</strong>, del tuo <strong>palleggio</strong> o di una situazione di gioco, e io te la rimando commentata fotogramma per fotogramma — cosa funziona, cosa correggere e <strong>come allenarlo</strong>. Un video che puoi riguardare quante volte vuoi, prima di ogni allenamento.',
+    'video.intro2':'E come un buon tutor non mi fermo a una correzione e via: ti lascio gli esercizi su cui lavorare, tu ti alleni e mi rimandi una nuova clip, e insieme vediamo i progressi. È un <strong>percorso che ti fa crescere nel tempo</strong> — per questo il pacchetto e il percorso mensile valgono molto più di una singola analisi.',
+    'step1.title':'Scegli e paga','step1.desc':'Scegli la formula qui sotto e completa il pagamento in modo sicuro.',
+    'step2.title':'Carichi la clip','step2.desc':'Subito dopo, incolli il link al tuo video nel modulo dedicato.',
+    'step3.title':'Ricevi l\'analisi','step3.desc':'Entro pochi giorni ti invio per email il video commentato.',
+    'tier1.name':'Analisi singola','tier1.desc':'Perfetta per provare: una clip analizzata nel dettaglio.','tier1.f1':'1 clip (tiro, palleggio o gioco)','tier1.f2':'Video commentato di 5–10 minuti','tier1.f3':'Consegna entro 4 giorni','tier1.cta':'Prenota ora →',
+    'tier2.badge':'Più scelto','tier2.name':'Pacchetto 4 analisi','tier2.desc':'Un vero percorso: quattro analisi per vedere i progressi.','tier2.f1':'4 clip in 4 settimane','tier2.f2':'Video commentato per ognuna','tier2.f3':'Indicazioni di allenamento tra una e l\'altra','tier2.f4':'Risparmi rispetto alla singola','tier2.cta':'Inizia il percorso →',
+    'tier3.name':'Percorso mensile','tier3.price.suffix':' / mese','tier3.desc':'Ti seguo con continuità, come un coach a distanza.','tier3.f1':'Analisi periodiche durante il mese','tier3.f2':'Programma personalizzato scritto','tier3.f3':'1 videochiamata mensile','tier3.f4':'Priorità nelle risposte','tier3.cta':'Attiva il percorso →',
+    'tier.note':'Non sai quale scegliere? <a href="#contatti" style="color:var(--accent);font-weight:600;text-decoration:none;">Scrivimi</a> e ne parliamo: il primo confronto è gratuito.',
+    'where.eyebrow':'Dove e quando','where.h2':'Vengo da te',
+    'where.intro':'Non ho una palestra fissa — e questa è una scelta, non un limite. Il mio allenamento si adatta al tuo spazio: cortile, campetto di quartiere, parco. Se serve una struttura al coperto, lo organizziamo insieme.',
+    'zona1.label':'Zona','zona1.value':'Udine e provincia (Friuli Venezia Giulia)',
+    'zona2.label':'Disponibilità','zona2.value':'Mattina, con flessibilità sull\'orario',
+    'zona3.label':'Mobilità','zona3.value':'Disponibile a spostarsi nei comuni limitrofi',
+    'zona4.label':'Primo incontro','zona4.value':'Valutazione gratuita per definire obiettivi e programma',
+    'rates.eyebrow':'Tariffe','rates.h2':'Investimento personalizzato',
+    'rates.text':'Le tariffe variano in base al tipo di sessione, alla frequenza e al numero di partecipanti. Contattami per un preventivo su misura.',
+    'rates.badge':'✓ Primo incontro di valutazione gratuito',
+    'contact.eyebrow':'Contatti','contact.h2':'Iniziamo','contact.intro':'Scrivimi per una valutazione gratuita o per qualsiasi domanda. Rispondo di persona.',
+    'form.nome.label':'Nome','form.nome.placeholder':'Il tuo nome',
+    'form.eta.label':'Età atleta','form.eta.placeholder':'es. 15 anni',
+    'form.email.label':'Email','form.email.placeholder':'tua@email.it',
+    'form.tel.label':'Telefono / WhatsApp','form.tel.placeholder':'+39 ...',
+    'form.servizio.label':'Tipo di allenamento','form.servizio.placeholder':'Seleziona...',
+    'form.opt.individuale':'Sessione individuale','form.opt.gruppo':'Piccolo gruppo (2–3 persone)',
+    'form.opt.tiro':'Tiro e meccanica','form.opt.palleggio':'Palleggio e lettura del gioco',
+    'form.opt.difesa':'Difesa e atletismo','form.opt.valutazione':'Non lo so ancora — valutiamo insieme',
+    'form.msg.label':'Messaggio','form.msg.placeholder':'Raccontami un po\' di te: livello di gioco, obiettivi, dove ti trovi...',
+    'form.submit':'Invia richiesta →','form.success':'✓ Messaggio inviato. Ti risponderò al più presto!',
+    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Coach privato di pallacanestro · Udine e provincia'
+  },
+  en: {
+    'nav.about':'About','nav.services':'Services','nav.video':'Video Analysis',
+    'nav.where':'Where','nav.rates':'Rates','nav.fundamentals':'Fundamentals','nav.contact':'Contact me',
+    'hero.subtitle':'Basket Personal Coaching',
+    'hero.tagline':'Twenty years as a professional, from <strong>Serie A with Reyer Venezia</strong> to C1. Now all that experience is at your disposal, <strong>wherever and whenever you want</strong>.',
+    'hero.quip':'Yes, my name is Andrea Meneghin. No, my dad\'s name isn\'t Dino. But if you\'re looking for basketball fundamentals explained with passion, <strong>you\'re still in the right place</strong>.',
+    'hero.cta.primary':'Book a session →','hero.cta.ghost':'Learn more',
+    'stat.years':'Years as a professional','stat.teams':'Career teams','stat.league':'Highest league played','stat.personal':'Personalized training',
+    'about.eyebrow':'About me','about.h2':'A career as long as a court',
+    'about.p1':'I played professional basketball for <strong>twenty years</strong>, reaching the top league with <strong>Reyer Venezia</strong> and touring all of Italy from Serie A down to C1. I\'ve been through historic club locker rooms, demanding coaches, injuries that make you question everything, and the satisfaction of coming back every time.',
+    'about.p2':'Today I put this experience at the service of those who want to grow: youngsters, adults, active players or enthusiasts who want to improve their game. I come to you — in your backyard, at the local court, wherever there\'s a basket.',
+    'career.seriea':'Serie A','career.serieb1':'Serie B1','career.seriec1':'Serie C1','career.serieb2':'Serie B2','career.last':'Serie B1 — final season',
+    'namesake.label':'A clarification, with a smile',
+    'namesake.p1':'Yes, my name is <strong>Andrea Meneghin</strong>. And no — I\'m not <em>that</em> Andrea Meneghin, Dino\'s son, the legend of Italian basketball. We share the same name: same first name, same last name, same passion for the game… but two different people.',
+    'namesake.p2':'I\'m upfront about this so you don\'t find out halfway through: when you write to me and when you book, on the other side it\'s me, <strong>Andrea from Udine</strong>. With my famous namesake I share the name and a real life spent on the hardwood — Serie A, the lower divisions, <strong>twenty years on the court</strong>. He remains in the history of Italian basketball, and he deserves it. I\'m here, with you, to help you improve <strong>one basket at a time</strong>.',
+    'services.eyebrow':'What I offer','services.h2':'Tailored training, at your place',
+    's1.title':'Individual sessions','s1.desc':'One hour dedicated entirely to you. We work on fundamentals, specific weaknesses and the goals you want to achieve.',
+    's2.title':'Small groups','s2.desc':'Two or three athletes together: ideal for siblings, friends, or small teams who want to work on the same goal with more intensity.',
+    's3.title':'Shooting mechanics','s3.desc':'Analysis and correction of shooting technique: form, release, repetition. The most requested work and the one that makes the difference in decisive moments.',
+    's4.title':'Ball handling & reads','s4.desc':'Ball handling, change of direction, 1-on-1. How to read the court and make the right decisions under pressure.',
+    's5.title':'Defense & positioning','s5.desc':'Defensive footwork, body position, resistance. Defense can be trained — and it\'s often the detail that earns you a starting spot.',
+    's6.title':'Mental game','s6.desc':'Twenty years of career teach that the mind matters as much as the legs. Pressure management, crisis moments, consistency.',
+    'video.eyebrow':'Online coaching','video.h2':'Video analysis, wherever you are',
+    'video.intro1':'Think of it as having a <strong>remote tutor</strong>, except the subject is basketball. You don\'t need to be in Udine: send me a clip of your <strong>shot</strong>, your <strong>dribble</strong> or a game situation, and I\'ll send it back commented frame by frame — what works, what to correct and <strong>how to train it</strong>. A video you can rewatch as many times as you want, before every practice.',
+    'video.intro2':'And like a good tutor I don\'t stop at one correction: I leave you drills to work on, you train and send me a new clip, and together we track progress. It\'s a <strong>journey that makes you grow over time</strong> — which is why the package and monthly plan are worth much more than a single analysis.',
+    'step1.title':'Choose & pay','step1.desc':'Choose the plan below and complete the payment securely.',
+    'step2.title':'Upload your clip','step2.desc':'Right after, paste your video link in the dedicated form.',
+    'step3.title':'Receive your analysis','step3.desc':'Within a few days I\'ll send you the commented video by email.',
+    'tier1.name':'Single analysis','tier1.desc':'Perfect for trying it out: one clip analysed in detail.','tier1.f1':'1 clip (shot, dribble or game)','tier1.f2':'5–10 min commented video','tier1.f3':'Delivery within 4 days','tier1.cta':'Book now →',
+    'tier2.badge':'Most popular','tier2.name':'4-analysis pack','tier2.desc':'A real journey: four analyses to track your progress.','tier2.f1':'4 clips in 4 weeks','tier2.f2':'Commented video for each','tier2.f3':'Training tips between sessions','tier2.f4':'Save vs. single price','tier2.cta':'Start the journey →',
+    'tier3.name':'Monthly plan','tier3.price.suffix':' / month','tier3.desc':'I follow you consistently, like a remote coach.','tier3.f1':'Periodic analyses during the month','tier3.f2':'Written personalised programme','tier3.f3':'1 monthly video call','tier3.f4':'Priority responses','tier3.cta':'Start the plan →',
+    'tier.note':'Not sure which to choose? <a href="#contatti" style="color:var(--accent);font-weight:600;text-decoration:none;">Write to me</a> and we\'ll figure it out: the first chat is free.',
+    'where.eyebrow':'Where & when','where.h2':'I come to you',
+    'where.intro':'I don\'t have a fixed gym — and that\'s a choice, not a limitation. My training adapts to your space: backyard, neighbourhood court, park. If you need an indoor facility, we\'ll sort it out together.',
+    'zona1.label':'Area','zona1.value':'Udine and surroundings (Friuli Venezia Giulia)',
+    'zona2.label':'Availability','zona2.value':'Morning, with schedule flexibility',
+    'zona3.label':'Mobility','zona3.value':'Available to travel to nearby towns',
+    'zona4.label':'First meeting','zona4.value':'Free assessment to define goals and programme',
+    'rates.eyebrow':'Rates','rates.h2':'Personalised investment',
+    'rates.text':'Rates vary based on session type, frequency and number of participants. Contact me for a tailored quote.',
+    'rates.badge':'✓ Free first assessment meeting',
+    'contact.eyebrow':'Contact','contact.h2':'Let\'s start','contact.intro':'Write to me for a free assessment or any question. I reply personally.',
+    'form.nome.label':'Name','form.nome.placeholder':'Your name',
+    'form.eta.label':'Athlete age','form.eta.placeholder':'e.g. 15 years old',
+    'form.email.label':'Email','form.email.placeholder':'your@email.com',
+    'form.tel.label':'Phone / WhatsApp','form.tel.placeholder':'+39 ...',
+    'form.servizio.label':'Training type','form.servizio.placeholder':'Select...',
+    'form.opt.individuale':'Individual session','form.opt.gruppo':'Small group (2–3 people)',
+    'form.opt.tiro':'Shooting & mechanics','form.opt.palleggio':'Ball handling & game reading',
+    'form.opt.difesa':'Defense & athleticism','form.opt.valutazione':'Not sure yet — let\'s evaluate together',
+    'form.msg.label':'Message','form.msg.placeholder':'Tell me a bit about you: playing level, goals, where you are...',
+    'form.submit':'Send request →','form.success':'✓ Message sent. I\'ll reply as soon as possible!',
+    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Private basketball coach · Udine and surroundings'
+  }
+};
+
+let currentLang = 'it';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  ['btn-it','mbtn-it'].forEach(id => { const el = document.getElementById(id); if (el) el.classList.toggle('active', lang === 'it'); });
+  ['btn-en','mbtn-en'].forEach(id => { const el = document.getElementById(id); if (el) el.classList.toggle('active', lang === 'en'); });
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+(function() {
+  try { const saved = localStorage.getItem('lang'); if (saved === 'en') setLang('en'); } catch(e) {}
+})();
+
+// Form contatti → invio reale a Netlify Forms
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new URLSearchParams(new FormData(form)).toString();
+  const btn = form.querySelector('button[type="submit"]');
+  if (btn) { btn.disabled = true; btn.textContent = 'Invio...'; }
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data
+  })
+  .then(() => {
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  })
+  .catch(() => {
+    if (btn) { btn.disabled = false; btn.textContent = 'Invia richiesta →'; }
+    alert('Si è verificato un problema nell\'invio. Riprova o scrivimi direttamente via email.');
+  });
+}
+</script>
+
+</body>
+</html>
