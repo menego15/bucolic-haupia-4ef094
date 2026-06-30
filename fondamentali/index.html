@@ -33,56 +33,116 @@
     background:var(--cream);
     -webkit-font-smoothing:antialiased;
     line-height:1.5;
+    overflow-x:hidden;
   }
   a{color:inherit}
   button{font-family:inherit;cursor:pointer}
 
-  /* ---------- HEADER ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:var(--court);
-    color:var(--cream);
-    border-bottom:3px solid var(--orange);
+  /* ---------- NAV ---------- */
+  nav#navbar{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    height:64px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 2rem;
+    background:#ffffff;
+    border-bottom:2px solid #E5E5E5;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
   }
-  .bar{
-    max-width:var(--maxw);margin:0 auto;
-    padding:14px 22px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-  }
-  .brand{display:flex;align-items:baseline;gap:12px;min-width:0}
-  .mark{
+  .nav-logo{
     font-family:'Bebas Neue',sans-serif;
-    font-size:clamp(22px,4vw,36px);
-    letter-spacing:.12em;
-    line-height:1;
-    text-transform:uppercase;
+    font-size:1.6rem;letter-spacing:.06em;
+    color:#111111;text-decoration:none;
   }
-  .mark .dot{color:var(--orange)}
-  .by{
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-    color:#B7A593;white-space:nowrap;
+  .nav-logo span{color:var(--orange)}
+  .nav-links{list-style:none;display:flex;gap:2rem;margin:0;padding:0}
+  .nav-links a{
+    color:#666666;text-decoration:none;
+    font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;
+    transition:color .2s;padding:.4rem 0;position:relative;
   }
-  .by a{color:var(--orange);text-decoration:none}
-  .by a:hover{text-decoration:underline}
-  .langtoggle{display:flex;border:1px solid #3a3128;border-radius:999px;overflow:hidden;background:#211a13}
+  .nav-links a::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;
+    height:2px;background:var(--orange);
+    transform:scaleX(0);transition:transform .2s;
+  }
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-links a:hover{color:var(--orange)}
+  .nav-links a[aria-current="page"]{color:var(--orange)}
+  .nav-cta{
+    background:var(--orange);color:#fff!important;
+    padding:.5rem 1.2rem!important;border-radius:4px;font-weight:600!important;
+  }
+  .nav-cta::after{display:none!important}
+  .nav-cta:hover{background:var(--orange-deep)}
+  .langtoggle{
+    display:flex;align-items:center;
+    border:1px solid #E5E5E5;border-radius:4px;overflow:hidden;
+    margin-left:.5rem;flex-shrink:0;
+  }
   .langtoggle button{
-    background:transparent;border:none;color:#9a8b7a;
-    font-weight:700;font-size:12px;letter-spacing:.08em;
-    padding:7px 13px;text-transform:uppercase;transition:.15s;
+    background:none;border:none;color:#666666;
+    font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.08em;padding:.28rem .6rem;cursor:pointer;
+    transition:color .2s,background .2s;min-height:28px;line-height:1;text-transform:uppercase;
   }
   .langtoggle button.on{background:var(--orange);color:#fff}
-  .back-home{
-    font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
-    color:#B7A593;text-decoration:none;white-space:nowrap;
-    display:flex;align-items:center;gap:5px;transition:.15s;
+  .langtoggle button:hover:not(.on){color:#111111}
+  .nav-toggle{
+    display:none;flex-direction:column;gap:5px;cursor:pointer;
+    padding:8px;background:none;border:none;
+    min-width:44px;min-height:44px;align-items:center;justify-content:center;
   }
-  .back-home:hover{color:var(--orange)}
+  .nav-toggle span{
+    display:block;width:24px;height:2px;background:#111111;
+    transition:transform .3s,opacity .3s;
+  }
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{
+    display:none;position:fixed;top:64px;right:0;left:auto;
+    width:260px;height:auto;padding:0;
+    align-items:stretch;justify-content:flex-start;flex-direction:column;
+    background:#ffffff;
+    border-left:1px solid #E5E5E5;border-bottom:1px solid #E5E5E5;
+    border-radius:0 0 0 10px;
+    filter:drop-shadow(-4px 8px 20px rgba(0,0,0,.18));
+    z-index:999;
+  }
+  .mobile-menu.open{display:flex;animation:menuSlide .22s ease both}
+  @keyframes menuSlide{
+    from{opacity:0;transform:translateX(10px)}
+    to{opacity:1;transform:translateX(0)}
+  }
+  .mobile-menu a{
+    color:#111111;text-decoration:none;
+    padding:1rem 1.5rem;border-bottom:1px solid #E5E5E5;
+    min-height:48px;display:flex;align-items:center;
+    text-transform:uppercase;letter-spacing:.07em;
+    font-size:.9rem;font-weight:500;transition:color .2s,background .2s;
+  }
+  .mobile-menu a:hover{background:#111111;color:#ffffff}
+  .mobile-lang-wrap{
+    display:flex;align-items:center;gap:.5rem;
+    padding:.9rem 1.5rem;border-top:1px solid #E5E5E5;
+  }
+  .mobile-lang-wrap span{
+    font-size:.72rem;color:#666666;text-transform:uppercase;letter-spacing:.1em;
+  }
+  .mobile-lang-wrap button{
+    background:#F6F6F6;border:1px solid #E5E5E5;border-radius:4px;
+    padding:.3rem .7rem;font-family:'Inter',sans-serif;
+    font-size:.72rem;font-weight:700;color:#666666;cursor:pointer;
+    transition:all .2s;letter-spacing:.08em;min-height:32px;
+  }
+  .mobile-lang-wrap button.on{background:var(--orange);border-color:var(--orange);color:#fff}
 
   /* ---------- HERO ---------- */
   .hero{
     position:relative;overflow:hidden;
     background:var(--court);color:var(--cream);
     padding:38px 22px 30px;
+    margin-top:64px;
   }
   .hero-inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
   .eyebrow{
@@ -108,7 +168,7 @@
 
   /* ---------- CONTROLS ---------- */
   .controls{
-    position:sticky;top:62px;z-index:40;
+    position:sticky;top:64px;z-index:40;
     background:var(--cream);
     border-bottom:1px solid var(--line);
     padding:14px 0 0;
@@ -295,19 +355,22 @@
   .hidden{display:none!important}
 
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+  @media(max-width:1100px){
+    .nav-links{display:none}
+    .nav-toggle{display:flex}
+    .langtoggle{display:none}
+  }
+  @media(max-width:768px){
+    nav#navbar{padding:0 1rem}
+  }
   @media(max-width:520px){
-    .bar{flex-wrap:wrap;gap:10px}
     .stats{gap:20px}
-    .by{display:none}
-    .back-home span{display:none}
     .fund-head{flex-direction:column;gap:10px}
     .lesson-panel{padding:28px 18px 30px}
   }
   @media(max-width:400px){
-    .mark{font-size:18px}
-    .bar{padding:12px 14px}
     main{padding:20px 14px 10px}
-    .hero{padding:28px 14px 22px}
+    .hero{padding:28px 14px 22px;margin-top:64px}
     .controls-inner{padding:0 14px}
     .channels-inner{padding:26px 14px 32px}
     .service-inner{padding:36px 14px 40px}
@@ -316,22 +379,39 @@
 </head>
 <body>
 
-<header>
-  <div class="bar">
-    <div class="brand">
-      <span class="mark" id="mark">FONDAMENTALI<span class="dot">.</span></span>
-      <span class="by" id="byline">by <a href="https://andreameneghin.it" target="_blank" rel="noopener">Andrea Meneghin</a> · video analysis</span>
-    </div>
-    <a href="https://andreameneghin.it" class="back-home" aria-label="Back to home">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      <span>Back to home</span>
-    </a>
-    <div class="langtoggle" role="group" aria-label="Language">
-      <button id="lang-it" class="on" onclick="setLang('it')">IT</button>
-      <button id="lang-en" onclick="setLang('en')">EN</button>
-    </div>
+<nav id="navbar" role="navigation" aria-label="Menu principale">
+  <a href="/" class="nav-logo">Andrea <span>Meneghin</span></a>
+  <ul class="nav-links">
+    <li><a href="/#chi-sono">Chi sono</a></li>
+    <li><a href="/#servizi">Servizi</a></li>
+    <li><a href="/#analisi-video">Analisi Video</a></li>
+    <li><a href="/#dove">Dove</a></li>
+    <li><a href="/#prezzi">Tariffe</a></li>
+    <li><a href="/fondamentali/" aria-current="page">Fondamentali</a></li>
+    <li><a href="/#contatti" class="nav-cta">Contattami</a></li>
+  </ul>
+  <div class="langtoggle" role="group" aria-label="Lingua / Language">
+    <button id="lang-it" class="on" onclick="setLang('it')">IT</button>
+    <button id="lang-en" onclick="setLang('en')">EN</button>
   </div>
-</header>
+  <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
+  <a href="/#chi-sono">Chi sono</a>
+  <a href="/#servizi">Servizi</a>
+  <a href="/#analisi-video">Analisi Video</a>
+  <a href="/#dove">Dove</a>
+  <a href="/#prezzi">Tariffe</a>
+  <a href="/fondamentali/" aria-current="page">Fondamentali</a>
+  <a href="/#contatti">Contattami</a>
+  <div class="mobile-lang-wrap">
+    <span>Lang:</span>
+    <button onclick="setLang('it')">IT</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+</nav>
 
 <section class="hero">
   <div class="key" aria-hidden="true">
@@ -730,7 +810,6 @@ const FUNDS = [
 const UI = {
   it:{
     htmlLang:"it",
-    mark:"FONDAMENTALI", byline:'by <a href="https://andreameneghin.it" target="_blank" rel="noopener">Andrea Meneghin</a> · video analysis',
     heroEyebrow:"Video library · YouTube",
     heroTitle:"Ogni fondamentale della pallacanestro, spiegato e in video.",
     heroSub:"Una raccolta organizzata di esercizi per fondamentale: per ognuno trovi una spiegazione chiara e dei video di insegnamento pronti da guardare su YouTube. In italiano e in inglese.",
@@ -775,7 +854,6 @@ const UI = {
   },
   en:{
     htmlLang:"en",
-    mark:"FUNDAMENTALS", byline:'by <a href="https://andreameneghin.it" target="_blank" rel="noopener">Andrea Meneghin</a> · video analysis',
     heroEyebrow:"Video library · YouTube",
     heroTitle:"Every basketball fundamental, explained and on video.",
     heroSub:"An organized collection of drills by fundamental: for each one you get a clear explanation and teaching videos ready to watch on YouTube. In Italian and English.",
@@ -1361,6 +1439,27 @@ function esc(s){ return s.replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&g
 const PLAY = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 const ICON_MSG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
 
+// Hamburger menu
+(function(){
+  const toggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navbar = document.getElementById('navbar');
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    navbar.classList.toggle('menu-open', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      navbar.classList.remove('menu-open');
+    });
+  });
+})();
+
 function setLang(l){
   lang = l;
   document.documentElement.lang = UI[l].htmlLang;
@@ -1377,8 +1476,6 @@ function setLang(l){
 
 function applyChrome(){
   const t = UI[lang];
-  document.getElementById("mark").innerHTML = t.mark + '<span class="dot">.</span>';
-  document.getElementById("byline").innerHTML = t.byline;
   document.getElementById("hero-eyebrow").textContent = t.heroEyebrow;
   document.getElementById("hero-title").textContent = t.heroTitle;
   document.getElementById("hero-sub").textContent = t.heroSub;

@@ -16,8 +16,6 @@
   --accent-dark: #C99200;
   --accent-light: #FFFAEB;
   --ink: #111111;
-  --ink-mid: #1A1A1A;
-  --bg: #FFFFFF;
   --bg-alt: #F6F6F6;
   --text: #111111;
   --text-muted: #666666;
@@ -34,34 +32,133 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-/* NAV slim */
-.topbar {
-  background: var(--ink);
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  background: #ffffff;
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.topbar-logo {
+.nav-logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--text);
   text-decoration: none;
 }
-.topbar-logo span { color: var(--accent); }
-.topbar-back {
-  color: rgba(255,255,255,0.7);
+.nav-logo span { color: var(--accent); }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: color 0.2s;
+  padding: 0.4rem 0;
+  position: relative;
 }
-.topbar-back:hover { color: var(--white); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--accent);
+  color: white !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 4px;
+  font-weight: 600 !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--accent-dark); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  min-width: 44px; min-height: 44px;
+  align-items: center; justify-content: center;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px; right: 0; left: auto;
+  width: 260px;
+  height: auto;
+  padding: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: #ffffff;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top: none;
+  box-shadow: none;
+  border-radius: 0 0 0 10px;
+  filter: drop-shadow(-4px 8px 20px rgba(0,0,0,0.18));
+  z-index: 999;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; animation: menuSlide 0.22s ease both; }
+@keyframes menuSlide {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  min-height: 48px;
+  display: flex; align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-menu a:hover { background: #111111; color: #ffffff; }
+
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  nav { padding: 0 1rem; }
+}
 
 /* CONTENUTO */
 .wrap {
@@ -70,6 +167,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   padding: 3.5rem 1.5rem;
+  padding-top: calc(64px + 3.5rem);
 }
 .card {
   background: var(--white);
@@ -174,9 +272,8 @@ footer {
 footer span { color: var(--accent); }
 
 @media (max-width: 480px) {
-  .topbar { padding: 0 1.2rem; }
   .card { padding: 1.8rem 1.4rem; }
-  .wrap { padding: 2.5rem 1.2rem; }
+  .wrap { padding: calc(64px + 2.5rem) 1.2rem 2.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -186,10 +283,30 @@ footer span { color: var(--accent); }
 </head>
 <body>
 
-<div class="topbar">
-  <a href="/" class="topbar-logo">Andrea <span>Meneghin</span></a>
-  <a href="/" class="topbar-back">← Torna al sito</a>
-</div>
+<nav id="navbar" role="navigation" aria-label="Menu principale">
+  <a href="/" class="nav-logo">Andrea <span>Meneghin</span></a>
+  <ul class="nav-links">
+    <li><a href="/#chi-sono">Chi sono</a></li>
+    <li><a href="/#servizi">Servizi</a></li>
+    <li><a href="/#analisi-video">Analisi Video</a></li>
+    <li><a href="/#dove">Dove</a></li>
+    <li><a href="/#prezzi">Tariffe</a></li>
+    <li><a href="/fondamentali/">Fondamentali</a></li>
+    <li><a href="/#contatti" class="nav-cta">Contattami</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
+  <a href="/#chi-sono">Chi sono</a>
+  <a href="/#servizi">Servizi</a>
+  <a href="/#analisi-video">Analisi Video</a>
+  <a href="/#dove">Dove</a>
+  <a href="/#prezzi">Tariffe</a>
+  <a href="/fondamentali/">Fondamentali</a>
+  <a href="/#contatti">Contattami</a>
+</nav>
 
 <div class="wrap">
   <div class="card">
@@ -262,6 +379,25 @@ footer span { color: var(--accent); }
 </footer>
 
 <script>
+// Hamburger menu
+const toggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const navbar = document.getElementById('navbar');
+toggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  navbar.classList.toggle('menu-open', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    navbar.classList.remove('menu-open');
+  });
+});
+
 function handleClip(e) {
   e.preventDefault();
   const form = e.target;

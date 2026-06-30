@@ -47,9 +47,7 @@
 :root {
   --accent: #E8A800;
   --accent-dark: #C99200;
-  --accent-deep: #7A5800;
   --accent-light: #FFFAEB;
-  --accent-glow: rgba(232,168,0,0.18);
   --ink: #111111;
   --ink-mid: #1A1A1A;
   --bg: #FFFFFF;
@@ -74,10 +72,6 @@ body {
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 @keyframes pulse-ring {
   0%   { transform: scale(0.9); opacity: 0.6; }
@@ -224,17 +218,39 @@ nav {
 }
 .mobile-menu a:hover { background: #111111; color: #ffffff; }
 
-/* nav.menu-open: nessuna modifica necessaria, il nav è sempre bianco */
-
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 50%, #252525 100%);
+  background: var(--ink);
   display: flex;
   align-items: center;
   padding: 100px 2rem 5rem;
   position: relative;
   overflow: hidden;
+}
+
+/* foto di sfondo con filtro colore */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/hero-bg.jpg') center / cover no-repeat;
+  filter: sepia(0.45) hue-rotate(12deg) saturate(0.65) brightness(0.38);
+  z-index: 0;
+}
+
+/* overlay gradiente per leggibilità testo */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(17,17,17,0.78) 0%,
+    rgba(17,17,17,0.45) 55%,
+    rgba(17,17,17,0.25) 100%
+  );
+  z-index: 1;
 }
 
 /* griglia campo stilizzata */
@@ -246,7 +262,7 @@ nav {
     linear-gradient(90deg, rgba(232,168,0,0.08) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-  z-index: 0;
+  z-index: 2;
 }
 
 /* pallone animato sfondo */
@@ -259,7 +275,7 @@ nav {
   height: min(420px, 50vw);
   animation: float 6s ease-in-out infinite;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 .hero-ball-ring {
   position: absolute;
@@ -271,7 +287,7 @@ nav {
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   max-width: 640px;
   width: 100%;
   animation: fadeUp 0.9s ease both;
@@ -896,8 +912,6 @@ footer span { color: var(--accent); }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
   nav { padding: 0 1rem; }
 
   .hero { padding: 88px 1.2rem 4rem; }
@@ -1405,12 +1419,6 @@ footer span { color: var(--accent); }
 </footer>
 
 <script>
-// Nav scrolled
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
 // Hamburger
 const toggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
