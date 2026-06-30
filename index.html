@@ -113,17 +113,21 @@ body {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 200;
+  z-index: 1000;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   transition: background 0.3s, box-shadow 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 nav.scrolled {
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--border);
 }
 .nav-logo {
@@ -199,12 +203,12 @@ nav.scrolled .nav-toggle span { background: var(--text); }
   display: none;
   position: fixed;
   top: 64px; left: 0; right: 0;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255,255,255,0.99);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  z-index: 199;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 999;
   flex-direction: column;
 }
 .mobile-menu.open { display: flex; animation: menuSlide 0.22s ease both; }
@@ -229,7 +233,7 @@ nav.scrolled .nav-toggle span { background: var(--text); }
 
 /* Nav con sfondo quando il menu mobile è aperto */
 nav.menu-open {
-  background: rgba(255,255,255,0.98) !important;
+  background: rgba(255,255,255,0.99) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 var(--border);
@@ -902,6 +906,11 @@ nav.scrolled .lang-switch button:hover:not(.active) { color: var(--text); }
 /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .tier-grid { grid-template-columns: repeat(2, 1fr); }
