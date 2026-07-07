@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carica la tua clip – OldSchool</title>
-<meta name="description" content="Invia il link al tuo video per ricevere l'analisi personalizzata di OldSchool.">
-<meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://oldschool.it/carica-clip">
+<title>Chi sono – OldSchool</title>
+<meta name="description" content="Vent'anni di carriera professionistica nel basket, dalla Serie A con la Reyer Venezia alla C1. Oggi al servizio di chi vuole crescere sul campo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://oldschool.it/chi-sono">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,6 +16,7 @@
   --accent-dark: #C99200;
   --accent-light: #FFFAEB;
   --ink: #111111;
+  --bg: #FFFFFF;
   --bg-alt: #F6F6F6;
   --text: #111111;
   --text-muted: #666666;
@@ -26,14 +27,21 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-alt);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 /* ── NAV ── */
 nav {
@@ -69,6 +77,7 @@ nav {
   padding: 0.4rem 0;
   position: relative;
 }
+.nav-links a[aria-current="page"] { color: var(--accent); }
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -148,6 +157,7 @@ nav {
   font-weight: 500;
   transition: color 0.2s, background 0.2s;
 }
+.mobile-menu a[aria-current="page"] { color: var(--accent); }
 .mobile-menu a:hover { background: #111111; color: #ffffff; }
 
 @media (max-width: 1100px) {
@@ -155,78 +165,73 @@ nav {
   .nav-toggle { display: flex; }
 }
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
   nav { padding: 0 1rem; }
 }
 
-/* CONTENUTO */
-.wrap {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 3.5rem 1.5rem;
-  padding-top: calc(64px + 3.5rem);
-}
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  max-width: 580px;
-  width: 100%;
-  padding: 2.5rem;
-  box-shadow: 0 12px 40px rgba(232,168,0,0.08);
+/* ── PAGE HEAD ── */
+.page-head {
+  padding: calc(64px + 3.5rem) 2rem 2.5rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 .eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
-  font-weight: 600;
   margin-bottom: 0.7rem;
+  font-weight: 600;
 }
-h1 {
+.page-head h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.4rem;
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  color: var(--text);
   letter-spacing: 0.02em;
   line-height: 1.05;
-  margin-bottom: 0.8rem;
 }
-.intro { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; }
 
-form { display: flex; flex-direction: column; gap: 1.1rem; }
-label.field { display: block; }
-.field-label {
-  display: block;
-  font-size: 0.73rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* ── CONTENUTO ── */
+main { max-width: 960px; margin: 0 auto; padding: 0 2rem 5rem; }
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.bio-text p {
   color: var(--text-muted);
-  margin-bottom: 0.4rem;
-  font-weight: 500;
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
 }
-input, select, textarea {
-  width: 100%;
-  background: var(--white);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  padding: 0.8rem 1rem;
-  outline: none;
-  border-radius: 8px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  min-height: 48px;
-  -webkit-appearance: none;
-}
-input:focus, select:focus, textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(232,168,0,0.1);
-}
-textarea { resize: vertical; min-height: 110px; }
-.hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; }
+.bio-text p strong { color: var(--text); font-weight: 600; }
 
+.career-line {
+  border-left: 2px solid var(--border);
+  padding-left: 1.5rem;
+}
+.career-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+.career-item:hover { transform: translateX(4px); }
+.career-item::before {
+  content: '';
+  position: absolute;
+  left: -1.64rem; top: 5px;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--accent-light);
+  transition: box-shadow 0.2s;
+}
+.career-item:hover::before { box-shadow: 0 0 0 5px var(--accent-light); }
+.career-club { font-weight: 600; color: var(--text); font-size: 0.9rem; }
+.career-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+.cta-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 3rem; }
 .btn-primary {
   background: var(--accent);
   color: var(--white);
@@ -235,45 +240,56 @@ textarea { resize: vertical; min-height: 110px; }
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  border-radius: 8px;
-  min-height: 50px;
-  width: 100%;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  min-height: 48px;
   box-shadow: 0 4px 16px rgba(232,168,0,0.35);
-  margin-top: 0.4rem;
 }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
-.btn-primary:disabled { opacity: 0.6; cursor: default; transform: none; }
-
-.success {
-  display: none;
-  text-align: center;
-  padding: 1rem 0;
+.btn-ghost {
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+  min-height: 48px;
 }
-.success .check {
-  width: 56px; height: 56px;
-  margin: 0 auto 1.2rem;
-  border-radius: 50%;
-  background: var(--accent-light);
-  display: flex; align-items: center; justify-content: center;
-}
-.success .check svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-.success h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.6rem; }
-.success p { color: var(--text-muted); font-size: 0.95rem; }
+.btn-ghost:hover { background: var(--border); }
 
 footer {
   background: var(--ink);
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.35);
 }
 footer span { color: var(--accent); }
 
+@media (max-width: 768px) {
+  .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .page-head { padding: calc(64px + 2.5rem) 1.2rem 1.5rem; }
+  main { padding: 0 1.2rem 3.5rem; }
+}
 @media (max-width: 480px) {
-  .card { padding: 1.8rem 1.4rem; }
-  .wrap { padding: calc(64px + 2.5rem) 1.2rem 2.5rem; }
+  .career-line { padding-left: 1.2rem; }
+  .career-club { font-size: 0.84rem; }
+  .cta-group { flex-direction: column; }
+  .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -286,7 +302,7 @@ footer span { color: var(--accent); }
 <nav id="navbar" role="navigation" aria-label="Menu principale">
   <a href="/" class="nav-logo">Old<span>School</span></a>
   <ul class="nav-links">
-    <li><a href="/chi-sono/">Chi sono</a></li>
+    <li><a href="/chi-sono/" aria-current="page">Chi sono</a></li>
     <li><a href="/#servizi">Servizi</a></li>
     <li><a href="/#analisi-video">Analisi Video</a></li>
     <li><a href="/#dove">Dove</a></li>
@@ -299,7 +315,7 @@ footer span { color: var(--accent); }
   </button>
 </nav>
 <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
-  <a href="/chi-sono/">Chi sono</a>
+  <a href="/chi-sono/" aria-current="page">Chi sono</a>
   <a href="/#servizi">Servizi</a>
   <a href="/#analisi-video">Analisi Video</a>
   <a href="/#dove">Dove</a>
@@ -308,78 +324,38 @@ footer span { color: var(--accent); }
   <a href="/#contatti">Contattami</a>
 </nav>
 
-<div class="wrap">
-  <div class="card">
+<header class="page-head">
+  <p class="eyebrow reveal">Chi sono</p>
+  <h1 class="reveal reveal-delay-1">Una carriera lunga un campo</h1>
+</header>
 
-    <div id="form-view">
-      <p class="eyebrow">Ultimo passaggio</p>
-      <h1>Carica la tua clip</h1>
-      <p class="intro">
-        Grazie! Ora inviami il link al video che vuoi far analizzare. Riceverai l'analisi commentata
-        via email entro pochi giorni.
-      </p>
-
-      <!-- Modulo Netlify: il nome "analisi-video" comparirà nel pannello Forms di Netlify -->
-      <form name="analisi-video" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleClip(event)">
-        <input type="hidden" name="form-name" value="analisi-video">
-        <p hidden><label>Non compilare se sei umano: <input name="bot-field"></label></p>
-
-        <label class="field">
-          <span class="field-label">Nome e cognome</span>
-          <input type="text" name="nome" required autocomplete="name">
-        </label>
-
-        <label class="field">
-          <span class="field-label">Email (dove ti invio l'analisi)</span>
-          <input type="email" name="email" required autocomplete="email">
-        </label>
-
-        <label class="field">
-          <span class="field-label">Categoria / livello</span>
-          <input type="text" name="livello" placeholder="es. Under 15, amatoriale, Serie C">
-        </label>
-
-        <label class="field">
-          <span class="field-label">Cosa vuoi che analizzi</span>
-          <select name="focus">
-            <option>Meccanica di tiro</option>
-            <option>Palleggio / ballhandling</option>
-            <option>Lettura difensiva / posizionamento</option>
-            <option>Situazione di gioco (1c1, letture)</option>
-            <option>Altro (specifico nelle note)</option>
-          </select>
-        </label>
-
-        <label class="field">
-          <span class="field-label">Link al video</span>
-          <input type="url" name="link_video" required placeholder="https://...">
-          <span class="hint">Carica il video su YouTube (non in elenco), Google Drive o WeTransfer e incolla qui il link.</span>
-        </label>
-
-        <label class="field">
-          <span class="field-label">Note (facoltativo)</span>
-          <textarea name="note" placeholder="Tutto ciò che mi può servire: su cosa stai lavorando, dubbi, contesto..."></textarea>
-        </label>
-
-        <button type="submit" class="btn-primary">Invia la clip</button>
-      </form>
+<main>
+  <div class="bio-grid">
+    <div class="bio-text reveal reveal-delay-2">
+      <p>Ho giocato a basket professionistico per <strong>vent'anni</strong>, toccando la massima serie con la <strong>Reyer Venezia</strong> e girando tutta Italia dalla Serie A fino alla C1. Ho vissuto spogliatoi di club storici, allenatori esigenti, infortuni che ti rimettono in discussione, e la soddisfazione di tornare in campo ogni volta.</p>
+      <p>Oggi metto questa esperienza al servizio di chi vuole crescere: ragazzi, adulti, giocatori in attività o appassionati che vogliono migliorare il proprio gioco. Vengo da te — nel tuo cortile, al campetto, ovunque ci sia un canestro.</p>
     </div>
-
-    <div class="success" id="success-view">
-      <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h2>Clip ricevuta!</h2>
-      <p>Ho ricevuto il tuo video. Ti invierò l'analisi commentata via email entro pochi giorni. A presto!</p>
+    <div class="career-line reveal reveal-delay-3" aria-label="Carriera professionistica">
+      <div class="career-item"><div class="career-club">Reyer Venezia</div><div class="career-detail">Serie A</div></div>
+      <div class="career-item"><div class="career-club">Ferrara</div><div class="career-detail">Serie A</div></div>
+      <div class="career-item"><div class="career-club">Parma · Roseto degli Abruzzi · Montegranaro · Scafati</div><div class="career-detail">Serie B1</div></div>
+      <div class="career-item"><div class="career-club">Tortona · Busto Arsizio</div><div class="career-detail">Serie C1</div></div>
+      <div class="career-item"><div class="career-club">Borgomanero · Corno di Rosazzo</div><div class="career-detail">Serie B2</div></div>
+      <div class="career-item"><div class="career-club">Gorizia</div><div class="career-detail">Serie B1 — ultima stagione</div></div>
     </div>
-
   </div>
-</div>
+
+  <div class="cta-group">
+    <a href="/#contatti" class="btn-primary">Prenota una sessione →</a>
+    <a href="/" class="btn-ghost">Torna alla home</a>
+  </div>
+</main>
 
 <footer>
-  © 2026 <span>OldSchool</span> · Coach privato di pallacanestro
+  © 2026 <span>OldSchool</span> · Coach privato di pallacanestro · Udine e provincia
 </footer>
 
 <script>
-// Hamburger menu
 const toggle = document.querySelector('.nav-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const navbar = document.getElementById('navbar');
@@ -387,38 +363,20 @@ toggle.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.toggle('open');
   toggle.classList.toggle('open', isOpen);
   toggle.setAttribute('aria-expanded', isOpen);
-  navbar.classList.toggle('menu-open', isOpen);
 });
 mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
     toggle.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    navbar.classList.remove('menu-open');
   });
 });
 
-function handleClip(e) {
-  e.preventDefault();
-  const form = e.target;
-  const data = new URLSearchParams(new FormData(form)).toString();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.disabled = true; btn.textContent = 'Invio...';
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: data
-  })
-  .then(() => {
-    document.getElementById('form-view').style.display = 'none';
-    document.getElementById('success-view').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  })
-  .catch(() => {
-    btn.disabled = false; btn.textContent = 'Invia la clip';
-    alert('Si è verificato un problema nell\'invio. Riprova o scrivimi via email.');
-  });
-}
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
 </script>
 
 </body>
