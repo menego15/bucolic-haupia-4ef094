@@ -816,6 +816,49 @@ footer span { color: var(--accent); }
 }
 .hero-quip strong { color: #fff; font-style: normal; font-weight: 600; }
 
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 2000;
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--ink);
+  border: 1px solid rgba(255,122,26,0.35);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(11,63,160,0.35);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transform: translateY(140%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); opacity: 1; }
+.cookie-banner p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  flex: 1;
+}
+.cookie-banner p strong { color: #fff; font-weight: 600; }
+.cookie-actions { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.cookie-actions .btn-primary {
+  padding: 0.65rem 1.4rem;
+  font-size: 0.85rem;
+  min-height: 40px;
+}
+@media (max-width: 640px) {
+  .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; flex-direction: column; align-items: stretch; padding: 1.2rem; gap: 1rem; }
+  .cookie-actions .btn-primary { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner { transition: none; }
+}
+
 /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
@@ -1278,6 +1321,14 @@ footer span { color: var(--accent); }
   <p data-i18n="footer.text">© 2026 <span>Andrea Meneghin</span> · Coach privato di pallacanestro · Udine e provincia</p>
 </footer>
 
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie">
+  <p data-i18n="cookie.text">Questo sito usa solo <strong>cookie tecnici</strong>, necessari per il modulo di contatto e per ricordare la lingua scelta. Nessun cookie di profilazione o marketing.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn-primary" id="cookie-accept" data-i18n="cookie.accept">Ho capito</button>
+  </div>
+</div>
+
 <script>
 // Hamburger
 const toggle = document.querySelector('.nav-toggle');
@@ -1380,7 +1431,9 @@ const translations = {
     'form.video.label':'Link video (facoltativo)','form.video.placeholder':'https://...',
     'form.msg.label':'Messaggio','form.msg.placeholder':'Raccontami un po\' di te: livello di gioco, obiettivi, dove ti trovi...',
     'form.submit':'Invia richiesta →','form.success':'✓ Messaggio inviato. Ti risponderò al più presto!',
-    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Coach privato di pallacanestro · Udine e provincia'
+    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Coach privato di pallacanestro · Udine e provincia',
+    'cookie.text':'Questo sito usa solo <strong>cookie tecnici</strong>, necessari per il modulo di contatto e per ricordare la lingua scelta. Nessun cookie di profilazione o marketing.',
+    'cookie.accept':'Ho capito'
   },
   en: {
     'nav.about':'About','nav.services':'Services','nav.video':'Video Analysis',
@@ -1430,7 +1483,9 @@ const translations = {
     'form.video.label':'Video link (optional)','form.video.placeholder':'https://...',
     'form.msg.label':'Message','form.msg.placeholder':'Tell me a bit about you: playing level, goals, where you are...',
     'form.submit':'Send request →','form.success':'✓ Message sent. I\'ll reply as soon as possible!',
-    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Private basketball coach · Udine and surroundings'
+    'footer.text':'© 2026 <span>Andrea Meneghin</span> · Private basketball coach · Udine and surroundings',
+    'cookie.text':'This site only uses <strong>technical cookies</strong>, needed for the contact form and to remember your language choice. No profiling or marketing cookies.',
+    'cookie.accept':'Got it'
   }
 };
 
@@ -1455,6 +1510,24 @@ function setLang(lang) {
 
 (function() {
   try { const saved = localStorage.getItem('lang'); if (saved === 'en') setLang('en'); } catch(e) {}
+})();
+
+// Cookie banner
+(function() {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  let alreadyAccepted = false;
+  try { alreadyAccepted = localStorage.getItem('cookieConsent') === 'accepted'; } catch(e) {}
+  if (!alreadyAccepted) {
+    requestAnimationFrame(() => banner.classList.add('visible'));
+  } else {
+    banner.style.display = 'none';
+  }
+  acceptBtn.addEventListener('click', () => {
+    try { localStorage.setItem('cookieConsent', 'accepted'); } catch(e) {}
+    banner.classList.remove('visible');
+    setTimeout(() => { banner.style.display = 'none'; }, 400);
+  });
 })();
 
 // Form contatti → invio reale a Netlify Forms
